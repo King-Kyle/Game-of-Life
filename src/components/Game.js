@@ -91,6 +91,10 @@ class Game extends React.Component {
 		this.setState({ isRunning: false });
 	};
 
+	handleIntervalChange = (event) => {
+		this.setState({ interval: event.target.value });
+	};
+
 	render() {
 		const { cells } = this.state;
 		return (
