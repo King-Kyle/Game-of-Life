@@ -84,6 +84,13 @@ class Game extends React.Component {
 		this.setState({ cells: this.makeCells() });
 	};
 
+	runGame = () => {
+		this.setState({ isRunning: true });
+	};
+	stopGame = () => {
+		this.setState({ isRunning: false });
+	};
+
 	render() {
 		const { cells } = this.state;
 		return (
