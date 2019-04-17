@@ -99,6 +99,18 @@ class Game extends React.Component {
 		const { cells } = this.state;
 		return (
 			<div>
+				<div className="controls">
+					Update every <input value={this.state.interval} onChange={this.handleIntervalChange} /> msec
+					{isRunning ? (
+						<button className="button" onClick={this.stopGame}>
+							Stop
+						</button>
+					) : (
+						<button className="button" onClick={this.runGame}>
+							Run
+						</button>
+					)}
+				</div>
 				<div
 					className="Board"
 					style={{
