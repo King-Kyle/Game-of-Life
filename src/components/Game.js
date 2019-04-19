@@ -86,9 +86,14 @@ class Game extends React.Component {
 
 	runGame = () => {
 		this.setState({ isRunning: true });
+		this.runIteration();
 	};
 	stopGame = () => {
 		this.setState({ isRunning: false });
+		if (this.timeoutHandler) {
+			window.clearTimeout(this.timeoutHandler);
+			this.timeoutHandler = null;
+		}
 	};
 
 	handleIntervalChange = (event) => {
@@ -111,6 +116,7 @@ class Game extends React.Component {
 						</button>
 					)}
 				</div>
+
 				<div
 					className="Board"
 					style={{
