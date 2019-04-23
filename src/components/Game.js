@@ -99,9 +99,10 @@ class Game extends React.Component {
 	runIteration() {
 		console.log('running iteration');
 		let newBoard = this.makeEmptyBoard();
-		// TODO: Add logic for each iteration here.
+
 		this.board = newBoard;
 		this.setState({ cells: this.makeCells() });
+
 		this.timeoutHandler = window.setTimeout(() => {
 			this.runIteration();
 		}, this.state.interval);
